@@ -1,0 +1,10 @@
+# Database files #
+##################
+*.db
+db_*
+
+
+# Python stuff #
+################
+*.pyc
+config.py

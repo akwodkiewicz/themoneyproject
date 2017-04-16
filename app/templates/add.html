@@ -1,0 +1,37 @@
+{% macro render_field(field) %}
+  <dt>{{ field.label }}
+  <dd>{{ field(**kwargs) }}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li><span style="color: red;">{{ error }}</span></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </dd>
+{% endmacro %}
+
+{% extends "base.html" %}
+{% block content %}
+<div>
+
+    <h1>Add a transaction:</h1>
+</div>
+<form action="" method="post" name="add">
+    <p>
+        {{ form.hidden_tag() }}
+        Please enter your transaction details:<br><br>
+        {{ render_field(form.date, size=20, value=date) }}
+        <br>
+        {{ render_field(form.memo, size=80, placeholder='Your memo here') }}<br>
+        {{ render_field(form.category) }}<br>
+        {{ render_field(form.outflow, size=10, value=0) }}<br>
+        {{ render_field(form.inflow, size=10, value=0) }}<br><br>
+    	{{ render_field(form.submit) }}
+    </p>
+    {% if added %}
+    <span style="color: green;">Transaction added successfully!</span>
+    {% endif %}
+</form>
+{% endblock %}
+

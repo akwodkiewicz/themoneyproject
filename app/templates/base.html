@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>The Money Project</title>
+  </head>
+  <body>
+    <div>Navigation: <a href="/">Home</a>
+    <a href="/add">Add transactions</a>
+    <a href="/addcategory">Add categories</a>
+    <a href="/history">History</a>
+    <a href="/stats">Stats</a>
+    <a href="/about">About</a>
+    <!--<a href="/login">Login</a></div>-->
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

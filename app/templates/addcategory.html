@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <h1>Add a category:</h1>
+</div>
+<form action="" method="post" name="add">
+    <p>
+        Please enter your category name:<br><br>
+        {{ form.category }}<br>
+    	{{ form.submit }}
+    </p>
+	<br>
+    {% if form.category.errors|length > 0  %}
+    <span style="color: red;">Incorrect values</span>
+    {% endif %}
+    {% if added %}
+    <span style="color: green;">Category added successfully!</span>
+    {% endif %}
+</form>
+{% endblock %}

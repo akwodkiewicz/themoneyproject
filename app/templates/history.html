@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for transaction in transactions %}
+<dl>
+Date: {{ transaction.date }} |
+Category: {{ transaction.category.name }} |
+Memo: {{ transaction.memo }} |
+Amount:
+{% if transaction.amount < 0 %}
+<span style="color: red;">{{ transaction.amount }}</span>
+{% else %}
+<span style="color: green;">{{ transaction.amount }}</span>
+{% endif %}
+</dl>
+{% endfor %}
+
+{% endblock %}
