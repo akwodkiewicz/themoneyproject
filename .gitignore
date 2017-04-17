@@ -8,3 +8,7 @@ db_*
 ################
 *.pyc
 config.py
+
+# Temporary files #
+###################
+uploads

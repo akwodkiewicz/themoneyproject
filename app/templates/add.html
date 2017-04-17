@@ -27,11 +27,24 @@
         {{ render_field(form.category) }}<br>
         {{ render_field(form.outflow, size=10, value=0) }}<br>
         {{ render_field(form.inflow, size=10, value=0) }}<br><br>
-    	{{ render_field(form.submit) }}
+    	  <dd>{{ form.submit }}
     </p>
     {% if added %}
     <span style="color: green;">Transaction added successfully!</span>
     {% endif %}
+</form>
+<div>
+<h1>Upload .csv file</h1>
+</div>
+<form enctype="multipart/form-data" method="POST" name="import">
+  <p>
+      {{ uploadform.hidden_tag() }}
+      {{ render_field(uploadform.file) }}<br><br>
+      <dd>{{ uploadform.upload }}
+  </p>
+  {% if uploaded %}
+  <span style="color: green;">Upload success!</span>
+  {% endif %}
 </form>
 {% endblock %}
 
