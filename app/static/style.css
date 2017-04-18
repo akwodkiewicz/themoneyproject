@@ -1,0 +1,27 @@
+.container {
+	height: 25px;
+	background: content-box;
+	border: gray;
+    border-bottom-style: solid;
+	border-width: 1px;
+}
+.date {
+	float: left;
+	color: blue;
+	width: 8vw;
+}
+.amount {
+	float: left;
+	width: 5vw;
+	text-align: right;
+	padding: 0px 5px 0px 5px;
+}
+.memo {
+	float: left;
+	padding: 0px 5px 0px 5px;
+	font-size: 0.95em;
+}
+.category {
+	float: left;
+	width: 8vw;
+}

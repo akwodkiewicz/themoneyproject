@@ -6,8 +6,7 @@ from flask import g, render_template, flash, redirect, request
 from .forms import LoginForm, TransactionForm, CategoryForm, UploadForm
 from sqlalchemy import desc, exists
 from .logic import add_transcation, import_transaction, add_category
-#q = Category.query.all()
-#categories = list(set([(row.name, row.name) for row in q]))
+
 
 @app.route("/")
 @app.route("/index")

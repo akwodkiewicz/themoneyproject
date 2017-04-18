@@ -1,18 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container">
+	<div class="date">Date</div>
+	<div class="category">Category</div>
+	<div class="amount">Amount</div>
+	<div class="memo">Memo</div>
+</div>
 {% for transaction in transactions %}
-<dl>
-Date: {{ transaction.date }} |
-Category: {{ transaction.category.name }} |
-Memo: {{ transaction.memo }} |
-Amount:
-{% if transaction.amount < 0 %}
-<span style="color: red;">{{ transaction.amount }}</span>
-{% else %}
-<span style="color: green;">{{ transaction.amount }}</span>
-{% endif %}
-</dl>
+<div class="container">
+	<div class="date">{{ transaction.date }} </div>
+	<div class="category">{{ transaction.category.name }}</div>
+	<div class="amount">
+	{% if transaction.amount < 0 %}
+	<span style="color: red;">
+	{% else %}
+	<span style="color: yellowgreen;">
+	{% endif %}
+	{{ transaction.amount }}</span>
+	</div>
+	<div class="memo">{{ transaction.memo }}</div>
+</div>
 {% endfor %}
 
 {% endblock %}
